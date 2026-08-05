@@ -1,154 +1,185 @@
-// ============================================
-// VisãoAcolhedora
-// script.js
-// ============================================
+// ===========================
+// CONTROLE DE TAMANHO DA FONTE
+// ===========================
 
-document.addEventListener("DOMContentLoaded", () => {
+let tamanhoFonte = 100;
 
-    // =============================
-    // BOTÃO DO GUIA
-    // =============================
+const aumentarFonte = document.getElementById("aumentar-fonte");
+const diminuirFonte = document.getElementById("diminuir-fonte");
 
-    const botao = document.getElementById("btn-download");
 
-    if (botao) {
+if(aumentarFonte){
 
-        botao.addEventListener("click", () => {
+    aumentarFonte.addEventListener("click", function(){
 
-            alert(
-                "💖 Obrigado pelo interesse!\n\nEm uma versão completa do site, o Guia Digital será baixado automaticamente."
-            );
+        if(tamanhoFonte < 140){
 
-        });
+            tamanhoFonte += 10;
 
-    }
-
-    // =============================
-    // ANIMAÇÃO AO ROLAR A PÁGINA
-    // =============================
-
-    const elementos = document.querySelectorAll(
-        ".card, .recurso, .causa, .cta"
-    );
-
-    const aparecer = new IntersectionObserver((entries) => {
-
-        entries.forEach((entry) => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-                entry.target.style.transition = "0.8s ease";
-
-            }
-
-        });
-
-    }, {
-
-        threshold: 0.2
-
-    });
-
-    elementos.forEach((item) => {
-
-        item.style.opacity = "0";
-        item.style.transform = "translateY(50px)";
-
-        aparecer.observe(item);
-
-    });
-
-    // =============================
-    // MENU ATIVO
-    // =============================
-
-    const secoes = document.querySelectorAll("section");
-    const links = document.querySelectorAll(".menu a");
-
-    window.addEventListener("scroll", () => {
-
-        let atual = "";
-
-        secoes.forEach((secao) => {
-
-            const topo = secao.offsetTop - 120;
-            const altura = secao.clientHeight;
-
-            if (window.scrollY >= topo && window.scrollY < topo + altura) {
-
-                atual = secao.getAttribute("id");
-
-            }
-
-        });
-
-        links.forEach((link) => {
-
-            link.classList.remove("ativo");
-
-            if (link.getAttribute("href") === "#" + atual) {
-
-                link.classList.add("ativo");
-
-            }
-
-        });
-
-    });
-
-    // =============================
-    // BOTÃO VOLTAR AO TOPO
-    // =============================
-
-    const voltarTopo = document.createElement("button");
-
-    voltarTopo.innerHTML = "⬆";
-
-    voltarTopo.id = "voltar-topo";
-
-    document.body.appendChild(voltarTopo);
-
-    voltarTopo.style.position = "fixed";
-    voltarTopo.style.bottom = "25px";
-    voltarTopo.style.right = "25px";
-    voltarTopo.style.width = "55px";
-    voltarTopo.style.height = "55px";
-    voltarTopo.style.border = "none";
-    voltarTopo.style.borderRadius = "50%";
-    voltarTopo.style.background = "#d10068";
-    voltarTopo.style.color = "#fff";
-    voltarTopo.style.fontSize = "24px";
-    voltarTopo.style.cursor = "pointer";
-    voltarTopo.style.display = "none";
-    voltarTopo.style.boxShadow = "0 5px 15px rgba(0,0,0,.3)";
-    voltarTopo.style.zIndex = "999";
-
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 500) {
-
-            voltarTopo.style.display = "block";
-
-        } else {
-
-            voltarTopo.style.display = "none";
+            document.body.style.fontSize = tamanhoFonte + "%";
 
         }
 
     });
 
-    voltarTopo.addEventListener("click", () => {
+}
 
-        window.scrollTo({
 
-            top: 0,
+if(diminuirFonte){
 
-            behavior: "smooth"
+    diminuirFonte.addEventListener("click", function(){
 
-        });
+        if(tamanhoFonte > 80){
+
+            tamanhoFonte -= 10;
+
+            document.body.style.fontSize = tamanhoFonte + "%";
+
+        }
+
+    });
+
+}
+
+
+
+// ===========================
+// MODO ALTO CONTRASTE
+// ===========================
+
+
+const botaoContraste = document.getElementById("contraste");
+
+
+if(botaoContraste){
+
+    botaoContraste.addEventListener("click", function(){
+
+        document.body.classList.toggle("alto-contraste");
+
+    });
+
+}
+
+
+
+// ===========================
+// BOTÃO VOLTAR AO TOPO
+// ===========================
+
+
+const voltarTopo = document.createElement("button");
+
+
+voltarTopo.innerHTML = "Voltar ao topo";
+
+
+voltarTopo.classList.add("voltar-topo");
+
+
+document.body.appendChild(voltarTopo);
+
+
+
+window.addEventListener("scroll", function(){
+
+    if(window.scrollY > 400){
+
+        voltarTopo.style.display = "block";
+
+    }else{
+
+        voltarTopo.style.display = "none";
+
+    }
+
+});
+
+
+
+voltarTopo.addEventListener("click", function(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
 
     });
 
 });
+
+
+
+// ===========================
+// ANIMAÇÃO AO ROLAR A PÁGINA
+// ===========================
+
+
+const elementos = document.querySelectorAll(
+    ".card, .recurso, .cta"
+);
+
+
+function mostrarElementos(){
+
+
+    elementos.forEach(function(elemento){
+
+
+        const posicao = elemento.getBoundingClientRect().top;
+
+
+        const alturaTela = window.innerHeight;
+
+
+        if(posicao < alturaTela - 100){
+
+            elemento.classList.add("mostrar");
+
+        }
+
+
+    });
+
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    mostrarElementos
+);
+
+
+mostrarElementos();
+
+
+
+// ===========================
+// FORMULÁRIO
+// ===========================
+
+
+const formulario = document.querySelector("form");
+
+
+if(formulario){
+
+    formulario.addEventListener("submit", function(event){
+
+
+        event.preventDefault();
+
+
+        alert(
+            "Mensagem enviada com sucesso. Obrigado pelo contato!"
+        );
+
+
+        formulario.reset();
+
+
+    });
+
+}
