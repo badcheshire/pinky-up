@@ -1,0 +1,680 @@
+/* ===================================================
+   VISÃO ACOLHEDORA
+   style.css - Parte 1
+=================================================== */
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#FFF2F8;
+
+    color:#4A0030;
+
+    line-height:1.7;
+
+    font-size:20px;
+
+}
+
+/* CONTAINER */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+/* ACESSIBILIDADE */
+
+.skip-link{
+
+    position:absolute;
+
+    left:-9999px;
+
+    top:20px;
+
+    background:#d6006b;
+
+    color:#fff;
+
+    padding:15px 25px;
+
+    border-radius:10px;
+
+    z-index:999;
+
+    text-decoration:none;
+
+}
+
+.skip-link:focus{
+
+    left:20px;
+
+}
+
+/* HEADER */
+
+.header{
+
+    background:linear-gradient(135deg,#ffb6d9,#ff79b0);
+
+    padding:60px 20px;
+
+    text-align:center;
+
+    color:#4A0030;
+
+}
+
+.logo{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo h1{
+
+    font-size:3rem;
+
+    font-weight:900;
+
+}
+
+.logo span{
+
+    font-size:2.5rem;
+
+}
+
+.slogan{
+
+    margin-top:20px;
+
+    font-size:1.3rem;
+
+    max-width:800px;
+
+    margin-inline:auto;
+
+}
+
+/* MENU */
+
+.menu{
+
+    background:#ffffff;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+}
+
+.menu ul{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    list-style:none;
+
+    padding:18px;
+
+}
+
+.menu a{
+
+    text-decoration:none;
+
+    color:#c00060;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.menu a:hover{
+
+    color:#ff1493;
+
+}
+
+/* SEÇÕES */
+
+.section{
+
+    padding:70px 0;
+
+}
+
+.rosa{
+
+    background:#FFEAF4;
+
+}
+
+/* TÍTULOS */
+
+h2{
+
+    font-size:2.3rem;
+
+    margin-bottom:30px;
+
+}
+
+h3{
+
+    margin-bottom:15px;
+
+}
+
+.titulo-centro{
+
+    text-align:center;
+
+}
+
+/* CARD PRINCIPAL */
+
+.card{
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.card p{
+
+    margin-bottom:18px;
+
+}
+
+/* GRID DAS CAUSAS */
+
+.causas-grid{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.causa{
+
+    background:#ffd8ea;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:3px solid #ff7ab8;
+
+    transition:.3s;
+
+}
+
+.causa:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* CARDS DOS RECURSOS */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+    margin-top:45px;
+
+}
+
+.recurso{
+
+    background:#ffffff;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.recurso:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.icone{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+.recurso h3{
+
+    color:#c00060;
+
+    margin-bottom:20px;
+
+}
+
+.recurso p{
+
+    color:#5b3050;
+
+}
+/* ===================================================
+   VISÃO ACOLHEDORA
+   style.css - Parte 2
+=================================================== */
+
+/* ===========================
+   CALL TO ACTION (CTA)
+=========================== */
+
+.cta{
+    background:linear-gradient(135deg,#ffd3e7,#fff7fb);
+    border:4px dashed #ff69b4;
+    border-radius:30px;
+    padding:50px 30px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.cta h2{
+    margin-bottom:20px;
+    color:#b0005a;
+}
+
+.cta p{
+    font-size:1.15rem;
+    margin-bottom:30px;
+}
+
+/* ===========================
+   BOTÃO
+=========================== */
+
+#btn-download{
+
+    background:#d10068;
+    color:white;
+
+    border:none;
+
+    padding:18px 40px;
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+
+}
+
+#btn-download:hover{
+
+    background:#ad0056;
+
+    transform:translateY(-4px) scale(1.03);
+
+}
+
+#btn-download:active{
+
+    transform:scale(.97);
+
+}
+
+#btn-download:focus{
+
+    outline:4px solid #4A0030;
+
+    outline-offset:5px;
+
+}
+
+/* ===========================
+   RODAPÉ
+=========================== */
+
+footer{
+
+    background:#4A0030;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px 20px;
+
+}
+
+footer p{
+
+    font-size:1rem;
+
+}
+
+/* ===========================
+   ANIMAÇÕES
+=========================== */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.card,
+.recurso,
+.causa,
+.cta{
+
+    animation:aparecer .8s ease;
+
+}
+
+/* ===========================
+   HOVER GERAL
+=========================== */
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    transition:.3s;
+
+}
+
+.card,
+.recurso,
+.causa,
+.cta{
+
+    transition:.3s;
+
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+a{
+
+    color:#c00060;
+
+}
+
+a:hover{
+
+    color:#ff1493;
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ffeaf4;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff70b3;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#d10068;
+
+}
+
+/* ===========================
+   SELEÇÃO DE TEXTO
+=========================== */
+
+::selection{
+
+    background:#ff69b4;
+
+    color:white;
+
+}
+
+/* ===========================
+   RESPONSIVO - TABLETS
+=========================== */
+
+@media(max-width:900px){
+
+.logo h1{
+
+    font-size:2.2rem;
+
+}
+
+.menu ul{
+
+    gap:15px;
+
+}
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.causas-grid{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+/* ===========================
+   RESPONSIVO - CELULARES
+=========================== */
+
+@media(max-width:600px){
+
+body{
+
+    font-size:18px;
+
+}
+
+.header{
+
+    padding:40px 20px;
+
+}
+
+.logo{
+
+    flex-direction:column;
+
+}
+
+.logo h1{
+
+    font-size:2rem;
+
+}
+
+.logo span{
+
+    font-size:2rem;
+
+}
+
+.slogan{
+
+    font-size:1rem;
+
+}
+
+.menu ul{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.section{
+
+    padding:50px 0;
+
+}
+
+.card{
+
+    padding:25px;
+
+}
+
+.causas-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+#btn-download{
+
+    width:100%;
+
+    font-size:1.1rem;
+
+}
+
+.cta{
+
+    padding:35px 20px;
+
+}
+
+}
+
+/* ===========================
+   TELAS GRANDES
+=========================== */
+
+@media(min-width:1400px){
+
+.container{
+
+    max-width:1300px;
+
+}
+
+.logo h1{
+
+    font-size:3.5rem;
+
+}
+
+body{
+
+    font-size:22px;
+
+}
+
+}
