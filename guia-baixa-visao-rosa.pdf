@@ -1,5 +1,8 @@
-<a href="./guia-baixa-visao-rosa.pdf"
-   target="_blank"
-   class="botao">
+<a
+    href="./guia-baixa-visao-rosa.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="botao"
+>
     📄 Abrir Guia
 </a>

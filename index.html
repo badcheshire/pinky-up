@@ -1,418 +1,779 @@
-Aqui está o código HTML completo e unificado da sua página VisãoAcolhedora, incluindo todo o conteúdo estruturado que você criou e o formulário de contato integrado ao seu e-mail institucional:
-
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>VisãoAcolhedora | Baixa Visão e Acessibilidade</title>
+```
+<title>VisãoAcolhedora | Baixa Visão e Acessibilidade</title>
 
-    <meta name="description"
-        content="Informações sobre baixa visão, acessibilidade, tecnologias assistivas e inclusão para melhorar a qualidade de vida.">
+<meta name="description"
+    content="Informações sobre baixa visão, acessibilidade, tecnologias assistivas e inclusão.">
 
-    <link rel="stylesheet" href="style.css">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #3d2632;
+        background: #fff8fb;
+        line-height: 1.6;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    /* Acessibilidade */
+    .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 10px;
+        background: #8f285d;
+        color: white;
+        padding: 10px 15px;
+        z-index: 999;
+    }
+
+    .skip-link:focus {
+        left: 10px;
+    }
+
+    /* Cabeçalho */
+    .header {
+        background: linear-gradient(135deg, #8f285d, #d86699);
+        color: white;
+        text-align: center;
+        padding: 55px 20px;
+    }
+
+    .header h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+
+    .header p {
+        font-size: 18px;
+    }
+
+    /* Menu */
+    .menu {
+        background: #641c43;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .menu ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .menu a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 15px 14px;
+        font-weight: bold;
+    }
+
+    .menu a:hover {
+        background: #9f356b;
+    }
+
+    /* Banner */
+    .banner {
+        background: linear-gradient(
+            rgba(255, 225, 239, 0.95),
+            rgba(255, 245, 250, 0.95)
+        );
+        text-align: center;
+        padding: 90px 20px;
+    }
+
+    .banner h2 {
+        color: #8f285d;
+        font-size: 38px;
+        margin-bottom: 18px;
+    }
+
+    .banner p {
+        max-width: 750px;
+        margin: 0 auto 25px;
+        font-size: 18px;
+    }
+
+    /* Seções */
+    .section {
+        padding: 70px 20px;
+    }
+
+    .rosa {
+        background: #fbe3ee;
+    }
+
+    .card {
+        background: white;
+        padding: 35px;
+        border-radius: 18px;
+        box-shadow: 0 5px 20px rgba(120, 30, 75, 0.12);
+    }
+
+    .card h2,
+    .titulo-centro {
+        color: #8f285d;
+        margin-bottom: 20px;
+    }
+
+    .card p {
+        margin-bottom: 15px;
+    }
+
+    .card ul {
+        padding-left: 25px;
+    }
+
+    .card li {
+        margin-bottom: 10px;
+    }
+
+    .titulo-centro {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    /* Cards */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .recurso {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 18px rgba(120, 30, 75, 0.12);
+    }
+
+    .recurso h3 {
+        color: #a63d70;
+        margin-bottom: 10px;
+    }
+
+    /* FAQ */
+    details {
+        border-bottom: 1px solid #e4b7ca;
+        padding: 15px 0;
+    }
+
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        color: #8f285d;
+    }
+
+    details p {
+        margin-top: 10px;
+    }
+
+    /* Formulário */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    label {
+        font-weight: bold;
+        color: #641c43;
+        margin-top: 8px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 13px;
+        border: 2px solid #e2b4c8;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 16px;
+        background: #fff;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #9f356b;
+    }
+
+    button,
+    .botao {
+        display: inline-block;
+        background: #8f285d;
+        color: white;
+        border: none;
+        padding: 14px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    button:hover,
+    .botao:hover {
+        background: #641c43;
+    }
+
+    /* Guia */
+    .cta {
+        background: white;
+        text-align: center;
+        padding: 45px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(120, 30, 75, 0.12);
+    }
+
+    .cta h2 {
+        color: #8f285d;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .cta p {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    /* Rodapé */
+    footer {
+        background: #641c43;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    footer p {
+        margin: 5px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 800px) {
+
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .header h1 {
+            font-size: 34px;
+        }
+
+        .banner h2 {
+            font-size: 30px;
+        }
+    }
+
+    @media (max-width: 550px) {
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+        .menu ul {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .menu a {
+            padding: 10px;
+        }
+
+        .section {
+            padding: 45px 15px;
+        }
+
+        .card,
+        .cta {
+            padding: 25px;
+        }
+    }
+</style>
+```
 
 </head>
 
 <body>
 
-    <!-- Link de acessibilidade -->
+```
+<a href="#conteudo" class="skip-link">
+    Pular para o conteúdo principal
+</a>
 
-    <a href="#conteudo" class="skip-link">
-        Pular para o conteúdo principal
-    </a>
+<!-- CABEÇALHO -->
+<header class="header">
 
-    <!-- Cabeçalho -->
+    <div class="container">
 
-    <header class="header">
+        <h1>VisãoAcolhedora</h1>
+
+        <p>
+            Informação, acessibilidade e inclusão para pessoas com baixa visão.
+        </p>
+
+    </div>
+
+</header>
+
+<!-- MENU -->
+<nav class="menu" aria-label="Menu principal">
+
+    <div class="container">
+
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">O que é</a></li>
+            <li><a href="#sintomas">Sintomas</a></li>
+            <li><a href="#causas">Causas</a></li>
+            <li><a href="#tecnologia">Tecnologias</a></li>
+            <li><a href="#recursos">Recursos</a></li>
+            <li><a href="#faq">Perguntas</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+
+    </div>
+
+</nav>
+
+<main id="conteudo">
+
+    <!-- INÍCIO -->
+    <section id="inicio" class="banner">
 
         <div class="container">
 
-            <h1>VisãoAcolhedora</h1>
+            <h2>Baixa Visão e Acessibilidade</h2>
 
             <p>
-                Informação, acessibilidade e inclusão para pessoas com baixa visão.
+                Conheça informações importantes sobre baixa visão
+                e descubra recursos que ajudam a promover autonomia
+                e qualidade de vida.
             </p>
+
+            <a href="#sobre" class="botao">
+                Saiba Mais
+            </a>
 
         </div>
 
-    </header>
+    </section>
 
-    <!-- Menu -->
-
-    <nav class="menu" aria-label="Menu principal">
+    <!-- O QUE É -->
+    <section id="sobre" class="section">
 
         <div class="container">
 
-            <ul>
+            <div class="card">
 
-                <li><a href="#inicio">Início</a></li>
+                <h2>O que é Baixa Visão?</h2>
 
-                <li><a href="#sobre">O que é</a></li>
+                <p>
+                    A baixa visão é uma deficiência visual que não pode
+                    ser totalmente corrigida por óculos, lentes de
+                    contato ou cirurgias.
+                </p>
 
-                <li><a href="#sintomas">Sintomas</a></li>
+                <p>
+                    Mesmo com limitações visuais, muitas pessoas conseguem
+                    estudar, trabalhar e realizar suas atividades utilizando
+                    recursos de acessibilidade.
+                </p>
 
-                <li><a href="#causas">Causas</a></li>
-
-                <li><a href="#tecnologia">Tecnologias</a></li>
-
-                <li><a href="#recursos">Recursos</a></li>
-
-                <li><a href="#faq">Perguntas</a></li>
-
-                <li><a href="#contato">Contato</a></li>
-
-            </ul>
+            </div>
 
         </div>
 
-    </nav>
+    </section>
 
-    <main id="conteudo">
+    <!-- SINTOMAS -->
+    <section id="sintomas" class="section rosa">
 
-        <!-- Banner -->
+        <div class="container">
 
-        <section id="inicio" class="banner">
+            <div class="card">
 
-            <div class="container">
+                <h2>Sintomas</h2>
 
-                <h2>Baixa Visão e Acessibilidade</h2>
+                <ul>
+                    <li>Dificuldade para enxergar objetos distantes.</li>
+                    <li>Visão embaçada.</li>
+                    <li>Dificuldade para leitura.</li>
+                    <li>Sensibilidade à luz.</li>
+                    <li>Dificuldade para reconhecer pessoas.</li>
+                    <li>Necessidade de ambientes bem iluminados.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CAUSAS -->
+    <section id="causas" class="section">
+
+        <div class="container">
+
+            <h2 class="titulo-centro">
+                Principais Causas
+            </h2>
+
+            <div class="cards">
+
+                <article class="recurso">
+
+                    <h3>Congênita</h3>
+
+                    <p>
+                        Alterações presentes desde o nascimento.
+                    </p>
+
+                </article>
+
+                <article class="recurso">
+
+                    <h3>Glaucoma</h3>
+
+                    <p>
+                        Doença que pode comprometer o nervo óptico.
+                    </p>
+
+                </article>
+
+                <article class="recurso">
+
+                    <h3>Retinopatia Diabética</h3>
+
+                    <p>
+                        Complicação causada pelo diabetes.
+                    </p>
+
+                </article>
+
+                <article class="recurso">
+
+                    <h3>Degeneração Macular</h3>
+
+                    <p>
+                        Alteração relacionada ao envelhecimento.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TECNOLOGIAS -->
+    <section id="tecnologia" class="section rosa">
+
+        <div class="container">
+
+            <div class="card">
+
+                <h2>Tecnologias Assistivas</h2>
 
                 <p>
-
-                    Conheça informações importantes sobre baixa visão e descubra recursos
-                    que ajudam a promover autonomia e qualidade de vida.
-
+                    A tecnologia permite maior independência para
+                    pessoas com baixa visão.
                 </p>
 
-                <a href="#sobre" class="botao">
-                    Saiba Mais
+                <ul>
+                    <li>Leitores de tela.</li>
+                    <li>Lupas eletrônicas.</li>
+                    <li>Aplicativos de ampliação.</li>
+                    <li>Celulares com alto contraste.</li>
+                    <li>Computadores com ampliação de tela.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RECURSOS -->
+    <section id="recursos" class="section">
+
+        <div class="container">
+
+            <h2 class="titulo-centro">
+                Recursos de Acessibilidade
+            </h2>
+
+            <div class="cards">
+
+                <article class="recurso">
+
+                    <h3>Ampliação</h3>
+
+                    <p>
+                        Lupas ópticas e eletrônicas auxiliam na
+                        leitura de textos.
+                    </p>
+
+                </article>
+
+                <article class="recurso">
+
+                    <h3>Alto Contraste</h3>
+
+                    <p>
+                        Facilita a leitura e melhora a visualização
+                        do conteúdo.
+                    </p>
+
+                </article>
+
+                <article class="recurso">
+
+                    <h3>Boa Iluminação</h3>
+
+                    <p>
+                        Ambientes bem iluminados tornam as tarefas
+                        mais confortáveis.
+                    </p>
+
+                </article>
+
+                <article class="recurso">
+
+                    <h3>Leitor de Tela</h3>
+
+                    <p>
+                        Permite acessar conteúdos digitais por meio
+                        de áudio ou braille.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section rosa">
+
+        <div class="container">
+
+            <div class="card">
+
+                <h2>Perguntas Frequentes</h2>
+
+                <details>
+
+                    <summary>
+                        Baixa visão tem cura?
+                    </summary>
+
+                    <p>
+                        Depende da causa. Em muitos casos existem
+                        tratamentos e recursos que podem melhorar
+                        a qualidade de vida.
+                    </p>
+
+                </details>
+
+                <details>
+
+                    <summary>
+                        Quem possui baixa visão pode estudar?
+                    </summary>
+
+                    <p>
+                        Sim. Com adaptações e recursos de acessibilidade
+                        é possível acompanhar os estudos.
+                    </p>
+
+                </details>
+
+                <details>
+
+                    <summary>
+                        É possível trabalhar?
+                    </summary>
+
+                    <p>
+                        Sim. Muitas pessoas trabalham utilizando
+                        tecnologias assistivas e adaptações.
+                    </p>
+
+                </details>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTATO / WEB3FORMS -->
+    <section id="contato" class="section">
+
+        <div class="container">
+
+            <div class="card">
+
+                <h2>Entre em Contato</h2>
+
+                <p>
+                    Envie sua pergunta, dúvida ou sugestão.
+                    Sua mensagem será encaminhada para nossa equipe.
+                </p>
+
+                <form
+                    action="https://api.web3forms.com/submit"
+                    method="POST"
+                >
+
+                    <!-- COLOQUE SUA ACCESS KEY AQUI -->
+                    <input
+                        type="hidden"
+                        name="access_key"
+                        value="7663a361-f14c-41ac-9d38-f6919363fd05"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="subject"
+                        value="Nova pergunta - VisãoAcolhedora"
+                    >
+
+                    <label for="nome">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="name"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Digite seu e-mail"
+                        required
+                    >
+
+                    <label for="mensagem">
+                        Sua pergunta
+                    </label>
+
+                    <textarea
+                        id="mensagem"
+                        name="message"
+                        rows="6"
+                        placeholder="Digite sua pergunta aqui..."
+                        required
+                    ></textarea>
+
+                    <!-- Anti-spam -->
+                    <input
+                        type="checkbox"
+                        name="botcheck"
+                        style="display:none;"
+                    >
+
+                    <button type="submit">
+                        Enviar Pergunta
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GUIA -->
+    <section id="guia" class="section rosa">
+
+        <div class="container">
+
+            <div class="cta">
+
+                <h2>
+                    Guia Gratuito de Baixa Visão
+                </h2>
+
+                <p>
+                    Acesse nosso guia com informações sobre baixa visão,
+                    acessibilidade, tecnologias assistivas e recursos
+                    que podem ajudar no dia a dia.
+                </p>
+
+                <a
+                    href="./guia-baixa-visao-rosa.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="botao"
+                >
+                    📄 Abrir Guia
                 </a>
 
             </div>
 
-        </section>
-
-        <!-- O que é -->
-
-        <section id="sobre" class="section">
-
-            <div class="container">
-
-                <div class="card">
-
-                    <h2>O que é Baixa Visão?</h2>
-
-                    <p>
-
-                        A baixa visão é uma deficiência visual que não pode ser totalmente
-                        corrigida por óculos, lentes de contato ou cirurgias.
-
-                    </p>
-
-                    <p>
-
-                        Mesmo com limitações visuais, muitas pessoas conseguem estudar,
-                        trabalhar e realizar suas atividades utilizando recursos de
-                        acessibilidade.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Sintomas -->
-
-        <section id="sintomas" class="section rosa">
-
-            <div class="container">
-
-                <div class="card">
-
-                    <h2>Sintomas</h2>
-
-                    <ul>
-
-                        <li>Dificuldade para enxergar objetos distantes.</li>
-
-                        <li>Visão embaçada.</li>
-
-                        <li>Dificuldade para leitura.</li>
-
-                        <li>Sensibilidade à luz.</li>
-
-                        <li>Dificuldade para reconhecer pessoas.</li>
-
-                        <li>Necessidade de ambientes bem iluminados.</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Causas -->
-
-        <section id="causas" class="section">
-
-            <div class="container">
-
-                <h2 class="titulo-centro">
-                    Principais Causas
-                </h2>
-
-                <div class="cards">
-
-                    <article class="recurso">
-
-                        <h3>Congênita</h3>
-
-                        <p>
-                            Alterações presentes desde o nascimento.
-                        </p>
-
-                    </article>
-
-                    <article class="recurso">
-
-                        <h3>Glaucoma</h3>
-
-                        <p>
-                            Doença que pode comprometer o nervo óptico.
-                        </p>
-
-                    </article>
-
-                    <article class="recurso">
-
-                        <h3>Retinopatia Diabética</h3>
-
-                        <p>
-                            Complicação causada pelo diabetes.
-                        </p>
-
-                    </article>
-
-                    <article class="recurso">
-
-                        <h3>Degeneração Macular</h3>
-
-                        <p>
-                            Alteração relacionada ao envelhecimento.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Tecnologias -->
-
-        <section id="tecnologia" class="section rosa">
-
-            <div class="container">
-
-                <div class="card">
-
-                    <h2>Tecnologias Assistivas</h2>
-
-                    <p>
-
-                        A tecnologia permite maior independência para pessoas com baixa visão.
-
-                    </p>
-
-                    <ul>
-
-                        <li>Leitores de tela.</li>
-
-                        <li>Lupas eletrônicas.</li>
-
-                        <li>Aplicativos de ampliação.</li>
-
-                        <li>Celulares com alto contraste.</li>
-
-                        <li>Computadores com ampliação de tela.</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Recursos -->
-
-        <section id="recursos" class="section">
-
-            <div class="container">
-
-                <h2 class="titulo-centro">
-
-                    Recursos de Acessibilidade
-
-                </h2>
-
-                <div class="cards">
-
-                    <article class="recurso">
-
-                        <h3>Ampliação</h3>
-
-                        <p>
-
-                            Lupas ópticas e eletrônicas auxiliam na leitura de textos.
-
-                        </p>
-
-                    </article>
-
-                    <article class="recurso">
-
-                        <h3>Alto Contraste</h3>
-
-                        <p>
-
-                            Facilita a leitura e melhora a visualização do conteúdo.
-
-                        </p>
-
-                    </article>
-
-                    <article class="recurso">
-
-                        <h3>Boa Iluminação</h3>
-
-                        <p>
-
-                            Ambientes bem iluminados tornam as tarefas mais confortáveis.
-
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- FAQ -->
-
-        <section id="faq" class="section rosa">
-
-            <div class="container">
-
-                <div class="card">
-
-                    <h2>Perguntas Frequentes</h2>
-
-                    <details>
-
-                        <summary>Baixa visão tem cura?</summary>
-
-                        <p>
-
-                            Depende da causa. Em muitos casos existem tratamentos e recursos
-                            que melhoram a qualidade de vida.
-
-                        </p>
-
-                    </details>
-
-                    <details>
-
-                        <summary>Quem possui baixa visão pode estudar?</summary>
-
-                        <p>
-
-                            Sim. Com adaptações e recursos de acessibilidade é possível
-                            acompanhar os estudos.
-
-                        </p>
-
-                    </details>
-
-                    <details>
-
-                        <summary>É possível trabalhar normalmente?</summary>
-
-                        <p>
-
-                            Sim. Muitas pessoas trabalham utilizando tecnologias assistivas.
-
-                        </p>
-
-                    </details>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Contato -->
-
-        <section id="contato" class="section">
-
-            <div class="container">
-
-                <div class="card">
-
-                    <h2>Entre em Contato</h2>
-
-                    <p>Tem alguma dúvida ou sugestão? Envie uma mensagem para nós.</p>
-                    
-                    <form action="https://formspree.io" method="POST" class="formulario">
-                        
-                        <div class="form-grupo">
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="Nome" required placeholder="Digite seu nome completo">
-                        </div>
-
-                        <div class="form-grupo">
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="_replyto" required placeholder="seuemail@exemplo.com">
-                        </div>
-
-                        <div class="form-grupo">
-                            <label for="mensagem">Mensagem:</label>
-                            <textarea id="mensagem" name="Mensagem" rows="5" required placeholder="Digite sua mensagem aqui..."></textarea>
-                        </div>
-
-                        <input type="hidden" name="_subject" value="Nova mensagem de VisãoAcolhedora">
-
-                        <button type="submit" class="botao">Enviar Mensagem</button>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 VisãoAcolhedora. Todos os direitos reservados.</p>
-            <p>Desenvolvido com foco em acessibilidade digital.</p>
         </div>
-    </footer>
+
+    </section>
+
+</main>
+
+<!-- RODAPÉ -->
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 VisãoAcolhedora. Todos os direitos reservados.
+        </p>
+
+        <p>
+            Desenvolvido com foco em acessibilidade e inclusão.
+        </p>
+
+    </div>
+
+</footer>
+```
 
 </body>
+
 </html>
