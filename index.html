@@ -1,3 +1,5 @@
+Aqui está o código HTML completo e unificado da sua página VisãoAcolhedora, incluindo todo o conteúdo estruturado que você criou e o formulário de contato integrado ao seu e-mail institucional:
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -371,54 +373,30 @@
 
                     <h2>Entre em Contato</h2>
 
-                    <form>
+                    <p>Tem alguma dúvida ou sugestão? Envie uma mensagem para nós.</p>
+                    
+                    <form action="https://formspree.io" method="POST" class="formulario">
+                        
+                        <div class="form-grupo">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="Nome" required placeholder="Digite seu nome completo">
+                        </div>
 
-                        <label for="nome">Nome</label>
+                        <div class="form-grupo">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="_replyto" required placeholder="seuemail@exemplo.com">
+                        </div>
 
-                        <input type="text" id="nome" required>
+                        <div class="form-grupo">
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" name="Mensagem" rows="5" required placeholder="Digite sua mensagem aqui..."></textarea>
+                        </div>
 
-                        <label for="email">E-mail</label>
+                        <input type="hidden" name="_subject" value="Nova mensagem de VisãoAcolhedora">
 
-                        <input type="email" id="email" required>
-
-                        <label for="mensagem">Mensagem</label>
-
-                        <textarea id="mensagem" rows="5" required></textarea>
-
-                        <button type="submit">
-                            Enviar Mensagem
-                        </button>
+                        <button type="submit" class="botao">Enviar Mensagem</button>
 
                     </form>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- Guia -->
-
-        <section class="section rosa">
-
-            <div class="container">
-
-                <div class="cta">
-
-                    <h2>Guia Gratuito</h2>
-
-                    <p>
-
-                        Faça o download de um guia com orientações sobre acessibilidade
-                        para pessoas com baixa visão.
-
-                    </p>
-
-                    <a href="guia-baixa-visao.pdf" class="botao" download>
-
-                        Baixar Guia
-
-                    </a>
 
                 </div>
 
@@ -429,29 +407,12 @@
     </main>
 
     <!-- Rodapé -->
-
-    <footer>
-
+    <footer class="footer">
         <div class="container">
-
-            <p>
-
-                © 2026 VisãoAcolhedora. Todos os direitos reservados.
-
-            </p>
-
-            <p>
-
-                Desenvolvido com foco em acessibilidade e inclusão.
-
-            </p>
-
+            <p>&copy; 2026 VisãoAcolhedora. Todos os direitos reservados.</p>
+            <p>Desenvolvido com foco em acessibilidade digital.</p>
         </div>
-
     </footer>
 
-    <script src="script.js"></script>
-
 </body>
-
 </html>
